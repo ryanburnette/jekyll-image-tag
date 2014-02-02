@@ -1,6 +1,6 @@
 # Jekyll Image Tag
 
-**Better images for Jekyll.**
+> My fork of the [Jekyll Image Tag](https://github.com/robwierzbowski/jekyll-image-tag) plugin.
 
 Jekyll Image Tag is a full featured liquid tag for images in the [Jekyll](http://jekyllrb.com) static site generator. Store image presets, add classes, alt text, and any other attribute to an image's HTML, and automatically create resized images from a tag argument or a little YAML configuration.
 
