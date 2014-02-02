@@ -1,10 +1,8 @@
-# Jekyll Image Tag
+# Jekyll Image Tag R
 
 > My fork of the [Jekyll Image Tag](https://github.com/robwierzbowski/jekyll-image-tag) plugin.
 
-Jekyll Image Tag is a full featured liquid tag for images in the [Jekyll](http://jekyllrb.com) static site generator. Store image presets, add classes, alt text, and any other attribute to an image's HTML, and automatically create resized images from a tag argument or a little YAML configuration.
-
-For responsive images in Jekyll, take a look at [Jekyll Picture Tag](https://github.com/robwierzbowski/jekyll-picture-tag).
+**Jekyll Image Tag R** is a [Jekyll][1] plugin which adds image tag functionality in [Liquid][2]. Store image presets, add classes, alt text, and any other attribute to an image's HTML, and automatically create resized images from a tag argument or YAML configuration.
 
 ## Installation
 
@@ -55,34 +53,27 @@ Jekyll Image Tag stores settings in an `image` key in your _config.yml.
 
 ```yml
 image:
-  source: assets/images/_fullsize
-  output: generated
+  source: assets/images/source
+  output: assets/images/generated
   presets:
     users:
       attr:
-        class: user-portrait
+        class: users
         itemprop: image
       width: 350
-    half:
-      width: 400
-      height: 400
 ```
 
 #### source
 
 To make writing tags easier you can specify a source directory for your assets. Base images in the tag will be relative to the `source` directory. 
 
-For example, if `source` is set to `assets/images/_fullsize`, the tag `{% image stevenson/dream.jpg alt="A night scene" %}` will look for a file at `assets/images/_fullsize/stevenson/dream.jpg`.
+For example, if `source` is set to `assets/images/source`, the tag `{% image stevenson/dream.jpg alt="A night scene" %}` will look for a file at `assets/images/source/stevenson/dream.jpg`.
 
 Defaults to the site source directory.
 
 #### output
 
-Jekyll Image Tag generates resized images to the `output` directory in your compiled site. The organization of your `source` directory is maintained in the output directory. 
-
-Defaults to `{compiled Jekyll site}/generated`.
-
-*__NOTE:__ `output` must be in a directory that contains other files or it will be erased. This is a [known bug](https://github.com/mojombo/jekyll/issues/1297) in Jekyll.*
+Jekyll Image Tag generates resized images to the `output` directory specified in your Jekyll configuration. The `generated` folder is used if none is specififed. Images are generated to the output folder before Jekyll finishes compiling and are copied into your site.
 
 #### presets
 
@@ -124,22 +115,26 @@ Jekyll Image Tag creates resized versions of your images when you build the site
 
 Try to use a base image that is larger than the largest resized image you need. Jekyll Image Tag will warn you if a base image is too small, and won't upscale images.
 
-By using a `source` directory that is ignored by Jekyll you can prevent huge base images from being copied to the compiled site. For example, `source: assets/images/_fullsize` and `output: generated` will result in a compiled site that contains resized images but not the originals.
+By using a `source` directory that is ignored by Jekyll you can prevent huge base images from being copied to the compiled site.
 
-The `output` directory is never deleted by Jekyll. You may want to manually clean it every once in a while to remove unused images.
+Resizing images is a good first step to improve performance, but you should still use a build process to optimize site assets before deploying.
 
-Resizing images is a good first step to improve performance, but you should still use a build process to optimize site assets before deploying. If you're a cool kid, take a look at the [Yeoman](http://yeoman.io/) generator for Jekyll, [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb).
+## Version History
 
-## Contribute
-
-Report bugs and feature proposals in the [Github issue tracker](https://github.com/robwierzbowski/jekyll-image-tag/issues). In lieu of a formal styleguide, take care to maintain the existing coding style. 
-
-## Release History
-
-0.1.2, Aug 4, 2013: Bugfixes.  
-0.1.1, July 17, 2013: Refactor, add Liquid parsing.  
-0.1.0, July 14, 2013: Initial release.
++ 0.2.0 2014-02-02
+  + First version of this fork
+  + Now generates images into source then queues in Jekyll copy task
++ 0.1.2 2013-08-04
+  + Bugfixes
++ 0.1.1 2013-07-13
+  + Refactor, add Liquid parsing
++ 0.1.0 2013-07-14
+  + Initial release
 
 ## License
 
 [BSD-NEW](http://en.wikipedia.org/wiki/BSD_License)
+
+
+[1]: http://jekyllrb.com
+[2]: https://github.com/Shopify/liquid

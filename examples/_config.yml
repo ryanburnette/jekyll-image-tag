@@ -4,8 +4,8 @@ name: A Jekyll blog
 pygments: true
 
 image:
-  source: assets/images/_fullsize
-  output: generated
+  source: assets/images/source
+  output: assets/images/generated
   presets:
     # Proportional preset
     users:
