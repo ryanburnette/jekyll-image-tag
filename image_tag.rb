@@ -1,18 +1,5 @@
-# Title: Jekyll Image Tag
-# Authors: Rob Wierzbowski : @robwierzbowski
-#
-# Description: Better images for Jekyll.
-#
-# Download: https://github.com/robwierzbowski/jekyll-image-tag
-# Documentation: https://github.com/robwierzbowski/jekyll-image-tag/readme.md
-# Issues: https://github.com/robwierzbowski/jekyll-image-tag/issues
-#
-# Syntax:  {% image [preset or WxH] path/to/img.jpg [attr="value"] %}
-# Example: {% image poster.jpg alt="The strange case of Dr. Jekyll" %}
-#          {% image gallery poster.jpg alt="The strange case of Dr. Jekyll" class="gal-img" data-selected %}
-#          {% image 350xAUTO poster.jpg alt="The strange case of Dr. Jekyll" class="gal-img" data-selected %}
-#
-# See the documentation for full configuration and usage instructions.
+# Jekyll Image Tag R https://github.com/ryanburnette/jekyll_image_tag_r
+# Forked from Jekyll Image Tag by Robert Weirzbowski https://github.com/robwierzbowski/jekyll-image-tag
 
 require 'fileutils'
 require 'pathname'
