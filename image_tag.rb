@@ -128,6 +128,7 @@ module Jekyll
       end
 
       gen_name = "#{basename}-#{gen_width.round}x#{gen_height.round}-#{digest}#{ext}"
+      gen_add_name = gen_name
       gen_dest_dir = File.join(site_source, image_dest, image_dir)
       gen_dest_file = File.join(gen_dest_dir, gen_name)
 
@@ -135,10 +136,10 @@ module Jekyll
         gen_path = instance[:src].split('/')
         gen_path.pop
         gen_path = gen_path.join('/')
-        gen_name = gen_path + '/' + gen_name
+        gen_add_name = gen_path + '/' + gen_name
       end
 
-      site.static_files << Jekyll::StaticFile.new(site, site.source, image_dest, gen_name)
+      site.static_files << Jekyll::StaticFile.new(site, site.source, image_dest, gen_add_name)
 
       # Generate resized files
       unless File.exists?(gen_dest_file)
