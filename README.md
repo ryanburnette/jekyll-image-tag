@@ -6,13 +6,13 @@
 
 ## Installation
 
-Jekyll Image Tag requires [Jekyll](http://jekyllrb.com) `>=1.0`, [Minimagick](https://github.com/minimagick/minimagick) `>=3.6`, and [Imagemagick](http://www.imagemagick.org/script/index.php).
+Jekyll Image Tag R requires [Jekyll](http://jekyllrb.com) `>=1.0`, [Minimagick](https://github.com/minimagick/minimagick) `>=3.6`, and [Imagemagick](http://www.imagemagick.org/script/index.php).
 
 Once you have the requirements installed, copy image_tag.rb into your Jekyll _plugins folder.
 
 ## Usage
 
-There are two parts to Jekyll Image Tag: 
+There are two parts to Jekyll Image Tag R: 
 
 - [Liquid Tag](#liquid-tag)
 - [Configuration](#configuration)
@@ -27,7 +27,7 @@ The tag takes a mix of user input and pointers to configuration settings.
 
 #### image
 
-Tells Liquid this is a Jekyll Image Tag.
+Tells Liquid this is a Jekyll Image Tag R.
 
 #### preset or WxH
 
@@ -47,7 +47,7 @@ Optionally specify any number of HTML attributes. These will be merged with any 
 
 ### Configuration
 
-Jekyll Image Tag stores settings in an `image` key in your _config.yml.
+Jekyll Image Tag R stores settings in an `image` key in your _config.yml.
 
 **Example settings**
 
@@ -73,11 +73,11 @@ Defaults to the site source directory.
 
 #### output
 
-Jekyll Image Tag generates resized images to the `output` directory specified in your Jekyll configuration. The `generated` folder is used if none is specififed. Images are generated to the output folder before Jekyll finishes compiling and are copied into your site.
+Jekyll Image Tag R generates resized images to the `output` directory specified in your Jekyll configuration. The `generated` folder is used if none is specififed. Images are generated to the output folder before Jekyll finishes compiling and are copied into your site.
 
 #### presets
 
-Presets contain reusable settings for a Jekyll Image Tag. 
+Presets contain reusable settings for a Jekyll Image Tag R. 
 
 For example, a `users` preset might set image dimensions, a class, and some metadata attributes needed for all user pictures. If the design changes, you can edit the `users` preset and the new settings will apply to every tag that references it.
 
@@ -111,9 +111,9 @@ If you're using a JavaScript templating library such as Handlebars.js, the templ
 
 ## Managing Generated Images
 
-Jekyll Image Tag creates resized versions of your images when you build the site. It uses a smart caching system to speed up site compilation, and re-uses images as much as possible.
+Jekyll Image Tag R creates resized versions of your images when you build the site. It uses a smart caching system to speed up site compilation, and re-uses images as much as possible.
 
-Try to use a base image that is larger than the largest resized image you need. Jekyll Image Tag will warn you if a base image is too small, and won't upscale images.
+Try to use a base image that is larger than the largest resized image you need. Jekyll Image Tag R will warn you if a base image is too small, and won't upscale images.
 
 By using a `source` directory that is ignored by Jekyll you can prevent huge base images from being copied to the compiled site.
 
